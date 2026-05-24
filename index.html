@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TSENANE LDA — Equipamentos e Acessórios Industriais</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="#home" class="logo" onclick="showPage('home')">
+      <div style="width:40px;height:40px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.25rem;color:var(--primary);">T</div>
+      <span>TSENANE</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#home" onclick="showPage('home')">Início</a>
+      <div class="dropdown">
+        <a href="#services">Serviços</a>
+        <div class="dropdown-menu">
+          <a href="#" onclick="showSector('energy')">Energia</a>
+          <a href="#" onclick="showSector('water')">Água & Saneamento</a>
+          <a href="#" onclick="showSector('construction')">Construção Civil</a>
+          <a href="#" onclick="showSector('agriculture')">Agricultura</a>
+          <a href="#" onclick="showSector('health')">Saúde & Medicina</a>
+          <a href="#" onclick="showSector('transport')">Transporte</a>
+        </div>
+      </div>
+      <a href="#brands" onclick="showPage('brands')">Marcas</a>
+      <a href="#portfolio" onclick="showPage('portfolio')">Portfolio</a>
+      <a href="#about" onclick="showPage('about')">Sobre</a>
+      <a href="#contact" onclick="showPage('contact')">Contactos</a>
+      <a href="#contact" class="nav-contact" onclick="showPage('contact')">Solicitar Orçamento</a>
+    </div>
+    <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE: HOME -->
+<div id="page-home">
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Soluções Industriais para uma <span>Guiné em Desenvolvimento</span></h1>
+        <p>Há mais de 10 anos a fornecer equipamentos e acessórios industriais de ponta nos sectores de Energia, Água, Construção, Agricultura, Saúde e Transporte em Moçambique.</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn btn-primary" onclick="showPage('services')">Explorar Produtos</a>
+          <a href="#" class="btn btn-outline" onclick="showPage('contact')">Fale Connosco</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <h3>TSENANE em Números</h3>
+          <div class="hero-stats">
+            <div class="stat"><span class="number">10+</span><span class="label">Anos de Experiência</span></div>
+            <div class="stat"><span class="number">6</span><span class="label">Sectores de Actuação</span></div>
+            <div class="stat"><span class="number">10+</span><span class="label">Marcas Parceiras</span></div>
+            <div class="stat"><span class="number">8</span><span class="label">Clientes Institucionais</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Deslize para conhecer</span>
+      <svg width="16" height="24" viewBox="0 0 16 24" fill="none"><path d="M8 0v20M1 13l7 7 7-7" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+    </div>
+  </section>
+
+  <!-- SECTORS -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Sectores</span>
+        <h2>Áreas de Actuação</h2>
+        <p>Distribuímos equipamentos modernos e soluções inovadoras para os principais sectores da economia moçambicana.</p>
+      </div>
+      <div class="sectors-grid">
+        <div class="sector-card" onclick="showSector('energy')">
+          <div class="sector-icon s1">⚡</div>
+          <h3>Energia</h3>
+          <p>Geradores, painéis solares, contadores de energia, UPS e acessórios para o sector energético.</p>
+        </div>
+        <div class="sector-card" onclick="showSector('water')">
+          <div class="sector-icon s2">💧</div>
+          <h3>Água & Saneamento</h3>
+          <p>Contadores de água, tubagens, bombas, válvulas, serviços de perfuração e telemetria.</p>
+        </div>
+        <div class="sector-card" onclick="showSector('construction')">
+          <div class="sector-icon s3">🏗️</div>
+          <h3>Construção Civil</h3>
+          <p>Maquinaria pesada, acessórios de construção e consultoria para projectos de engenharia civil.</p>
+        </div>
+        <div class="sector-card" onclick="showSector('agriculture')">
+          <div class="sector-icon s4">🌾</div>
+          <h3>Agricultura</h3>
+          <p>Tractores, arados, equipamentos agrícolas, reboques e implementos para o agronegócio.</p>
+        </div>
+        <div class="sector-card" onclick="showSector('health')">
+          <div class="sector-icon s5">🏥</div>
+          <h3>Saúde & Medicina</h3>
+          <p>Refrigeradores de vacinas, arcas frias para morgues e equipamento hospitalar.</p>
+        </div>
+        <div class="sector-card" onclick="showSector('transport')">
+          <div class="sector-icon s6">🚛</div>
+          <h3>Transporte</h3>
+          <p>Aluguer de dump trucks, camiões basculantes e equipamentos de transporte em geral.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="section" style="background:var(--gray-50);">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Produtos em Destaque</span>
+        <h2>Equipamentos de Referência</h2>
+        <p>Seleccionamos as melhores marcas e produtos para garantir qualidade e durabilidade em cada fornecimento.</p>
+      </div>
+      <div class="products-grid">
+        <div class="product-card">
+          <div class="product-img" style="background:linear-gradient(135deg,#0ea5e9,#0284c7);color:white;font-size:2rem;">Bombas e Válvulas</div>
+          <div class="product-body">
+            <h3>Bombas e Válvulas</h3>
+            <p>Bombas de água, válvulas industriais e sistemas de pressurização. Parceiros oficiais WILO e KSB.</p>
+            <a href="#" class="product-link">Saber mais →</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img" style="background:linear-gradient(135deg,#06b6d4,#0891b2);color:white;font-size:2rem;">Ar Condicionado</div>
+          <div class="product-body">
+            <h3>Ar Condicionado Dunham-Bush</h3>
+            <p>Representante oficial Dunham-Bush em Moçambique. Soluções de climatização para todos os sectores.</p>
+            <a href="#" class="product-link">Saber mais →</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:white;font-size:2rem;">Painéis Solares</div>
+          <div class="product-body">
+            <h3>Painéis Solares e Geradores</h3>
+            <p>Geradores eléctricos, painéis fotovoltaicos, contadores de energia e bombas de combustível.</p>
+            <a href="#" class="product-link">Saber mais →</a>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img" style="background:linear-gradient(135deg,#64748b,#475569);color:white;font-size:2rem;">Peças e Acessórios</div>
+          <div class="product-body">
+            <h3>Peças e Acessórios Industriais</h3>
+            <p>Maquinaria de construção, acessórios, peças de reposição e consultoria técnica especializada.</p>
+            <a href="#" class="product-link">Saber mais →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRANDS -->
+  <section class="section brands" id="brands">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Marcas</span>
+        <h2>Representações Oficiais</h2>
+        <p>Seleccionamos e representamos oficialmente as marcas mais prestigiadas do mercado global.</p>
+      </div>
+    </div>
+    <div class="brands-marquee">
+      <div class="brands-track">
+        <div class="brand-item"><div style="font-weight:800;font-size:1.2rem;color:#e63946;">HITACHI</div><span>Representante Oficial</span></div>
+        <div class="brand-item"><div style="font-weight:800;font-size:1.2rem;color:#0057a3;">DUNHAM-BUSH</div><span>Representante Oficial</span></div>
+        <div class="brand-item"><div style="font-weight:800;font-size:1.2rem;color:#003d7a;">WILO</div><span>Parceiro Comercial</span></div>
+        <div class="brand-item"><div style="font-weight:800;font-size:1.2rem;color:#009ee3;">KSB</div><span>Parceiro Comercial</span></div>
+        <div class="brand-item"><div style="font-weight:800;font-size:1.2rem;color:#00a651;">MINUS40</div><span>Parceiro Comercial</span></div>
+        <div class="brand-item"><div style="font-weight:800;font-size:1.2rem;color:#003a70;">STULZ</div><span>Parceiro Comercial</span></div>
+        <div class="brand-item"><div style="font-weight:800;font-size:1.2rem;color:#e63946;">HITACHI</div><span>Representante Oficial</span></div>
+        <div class="brand-item"><div style="font-weight:800;font-size:1.2rem;color:#0057a3;">DUNHAM-BUSH</div><span>Representante Oficial</span></div>
+        <div class="brand-item"><div style="font-weight:800;font-size:1.2rem;color:#003d7a;">WILO</div><span>Parceiro Comercial</span></div>
+        <div class="brand-item"><div style="font-weight:800;font-size:1.2rem;color:#009ee3;">KSB</div><span>Parceiro Comercial</span></div>
+        <div class="brand-item"><div style="font-weight:800;font-size:1.2rem;color:#00a651;">MINUS40</div><span>Parceiro Comercial</span></div>
+        <div class="brand-item"><div style="font-weight:800;font-size:1.2rem;color:#003a70;">STULZ</div><span>Parceiro Comercial</span></div>
+      </div>
+    </div>
+    <div class="container" style="margin-top:40px;">
+      <div style="text-align:center;">
+        <a href="#" class="btn btn-primary btn-sm" onclick="showPage('brands')">Ver Todas as Marcas</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Depoimentos</span>
+        <h2>O Que Dizem os Nossos Clientes</h2>
+        <p>A confiança dos nossos parceiros é o nosso maior património.</p>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="text">"A Tsenane é um parceiro estratégico no fornecimento de equipamentos. A qualidade dos produtos e a assistência técnica são exemplares."</p>
+          <div class="author">
+            <div class="avatar">E</div>
+            <div><div class="name">EDM</div><div class="role">Electricidade de Moçambique</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="text">"Trabalhamos com a Tsenane há vários anos. O suporte pós-venda e a disponibilidade de peças são factores diferenciais."</p>
+          <div class="author">
+            <div class="avatar">A</div>
+            <div><div class="name">ARA-SUL</div><div class="role">Administração Regional de Águas</div></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="text">"A representação oficial Hitachi faz toda a diferença. Garantia, formação e peças originais — a Tsenane entrega tudo."</p>
+          <div class="author">
+            <div class="avatar">O</div>
+            <div><div class="name">Opway</div><div class="role">Construção Civil</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section class="section" id="portfolio">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">Clientes</span>
+        <h2>Quem Confia na Tsenane</h2>
+        <p>Empresas e instituições de referência que fazem parte da nossa história.</p>
+      </div>
+      <div class="clients-grid">
+        <div class="client-item"><div style="font-weight:700;font-size:1rem;text-align:center;">ARA-SUL</div></div>
+        <div class="client-item"><div style="font-weight:700;font-size:1rem;text-align:center;">Cahora Bassa</div></div>
+        <div class="client-item"><div style="font-weight:700;font-size:1rem;text-align:center;">EDM</div></div>
+        <div class="client-item"><div style="font-weight:700;font-size:1rem;text-align:center;">Elevo</div></div>
+        <div class="client-item"><div style="font-weight:700;font-size:1rem;text-align:center;">MTESS</div></div>
+        <div class="client-item"><div style="font-weight:700;font-size:1rem;text-align:center;">Opway</div></div>
+        <div class="client-item"><div style="font-weight:700;font-size:1rem;text-align:center;">Petromoc / Sasol</div></div>
+        <div class="client-item"><div style="font-weight:700;font-size:1rem;text-align:center;">Sizabantu</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag" style="background:rgba(255,255,255,0.06);color:var(--accent);">Contacto</span>
+        <h2>Entre em Contacto</h2>
+        <p>Estamos prontos para o atender. Solicite um orçamento ou agende uma visita técnica.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Fale Connosco</h3>
+          <div class="contact-info-item">
+            <div class="icon">📍</div>
+            <div class="info"><strong>Morada</strong><span>Av. Ahmed Sekou Touré, 1919, 1º Andar Esq., Maputo, Moçambique</span></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="icon">📞</div>
+            <div class="info"><strong>Telefone</strong><span>+258 21 312 389</span><span>Móvel: +258 873 132 800</span></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="icon">📧</div>
+            <div class="info"><strong>Email</strong><span>info@tsenane.co.mz</span></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="icon">🌍</div>
+            <div class="info"><strong>Presença</strong><span>Maputo, Moçambique · Nelspruit, África do Sul</span></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="icon">⏰</div>
+            <div class="info"><strong>Horário</strong><span>Seg–Sex: 08:00 – 17:00</span></div>
+          </div>
+        </div>
+        <form class="contact-form" onsubmit="event.preventDefault();alert('Obrigado pelo seu contacto. Responderemos em breve.');">
+          <div class="form-group"><input type="text" placeholder="Nome completo" required></div>
+          <div class="form-group"><input type="email" placeholder="Email" required></div>
+          <div class="form-group"><input type="tel" placeholder="Telefone"></div>
+          <div class="form-group">
+            <select><option>Sector de Interesse</option><option>Energia</option><option>Água e Saneamento</option><option>Construção Civil</option><option>Agricultura</option><option>Saúde e Medicina</option><option>Transporte</option></select>
+          </div>
+          <div class="form-group"><textarea placeholder="Descreva a sua necessidade" required></textarea></div>
+          <div class="form-group"><button type="submit" class="btn btn-primary">Enviar Mensagem</button></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo"><div style="width:36px;height:36px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--primary);">T</div><span>TSENANE LDA</span></div>
+          <p>Distribuição e comercialização de equipamentos e acessórios industriais. Representante oficial Hitachi e Dunham-Bush em Moçambique.</p>
+        </div>
+        <div>
+          <h4>Sectores</h4>
+          <ul>
+            <li><a href="#" onclick="showSector('energy')">Energia</a></li>
+            <li><a href="#" onclick="showSector('water')">Água e Saneamento</a></li>
+            <li><a href="#" onclick="showSector('construction')">Construção Civil</a></li>
+            <li><a href="#" onclick="showSector('agriculture')">Agricultura</a></li>
+            <li><a href="#" onclick="showSector('health')">Saúde e Medicina</a></li>
+            <li><a href="#" onclick="showSector('transport')">Transporte</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#" onclick="showPage('about')">Sobre Nós</a></li>
+            <li><a href="#" onclick="showPage('brands')">Marcas</a></li>
+            <li><a href="#" onclick="showPage('portfolio')">Portfolio</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contactos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="tel:+25821312389">+258 21 312 389</a></li>
+            <li><a href="tel:+258873132800">+258 873 132 800</a></li>
+            <li><a href="mailto:info@tsenane.co.mz">info@tsenane.co.mz</a></li>
+            <li>Maputo, Moçambique</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2024 TSENANE LDA. Todos os direitos reservados.</span>
+        <div class="footer-socials">
+          <a href="#" title="Facebook">f</a>
+          <a href="#" title="LinkedIn">in</a>
+          <a href="#" title="YouTube">▶</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- PAGE: ABOUT -->
+<div id="page-about" style="display:none;">
+  <div class="page-header"><div class="container"><h1>Sobre a TSENANE LDA</h1><p>Conheça a nossa história, visão e valores</p></div></div>
+  <div class="page-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <h2>Mais de 10 Anos ao Serviço da Indústria</h2>
+          <p>A TSENANE LDA é uma empresa formada por uma equipa de especialistas com mais de 10 anos de experiência acumulada no mercado doméstico e internacional.</p>
+          <p>Somos dedicados à distribuição e venda de equipamentos e acessórios industriais. Os produtos que comercializamos destinam-se a profissionais, pelo que seleccionamos e representamos oficialmente as marcas mais prestigiadas, garantindo o fornecimento de produtos originais.</p>
+          <div class="about-values">
+            <div class="value-item"><span class="check">✓</span>Ética, Transparência e Credibilidade</div>
+            <div class="value-item"><span class="check">✓</span>Eficiência, Integridade e Competência</div>
+            <div class="value-item"><span class="check">✓</span>Serviço com Respeito e Honestidade</div>
+            <div class="value-item"><span class="check">✓</span>Compromisso com Prazos</div>
+          </div>
+        </div>
+        <div class="about-image">
+          <div class="main-img" style="background:var(--gray-200);height:320px;border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center;font-size:4rem;">🏭</div>
+          <div class="exp-badge"><span class="num">10+</span><span class="txt">Anos de Experiência</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-section" style="background:var(--gray-50);">
+    <div class="container">
+      <div class="section-header"><span class="tag">Associações</span><h2>Membros Profissionais</h2><p>Somos membros da Plataforma Moçambicana de Água e da Associação de Pequenas e Médias Empresas em Moçambique.</p></div>
+      <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap;">
+        <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:32px 48px;text-align:center;"><div style="font-weight:700;font-size:1.2rem;">PLAMA</div><div style="font-size:0.813rem;color:var(--gray-500);">Plataforma Moçambicana de Água</div></div>
+        <div style="background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:32px 48px;text-align:center;"><div style="font-weight:700;font-size:1.2rem;">APME</div><div style="font-size:0.813rem;color:var(--gray-500);">Associação de PMEs de Moçambique</div></div>
+      </div>
+      <div style="margin-top:40px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);padding:32px;">
+        <h3 style="margin-bottom:16px;">Visão</h3>
+        <p style="color:var(--gray-500);margin-bottom:24px;">Ser uma empresa de referência no negócio de equipamentos industriais, melhorando o relacionamento com os clientes e garantindo a sua longevidade.</p>
+        <h3 style="margin-bottom:16px;">Valores</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div class="value-item"><span class="check">✓</span>Ética, transparência e credibilidade</div>
+          <div class="value-item"><span class="check">✓</span>Eficiência, integridade e competência</div>
+          <div class="value-item"><span class="check">✓</span>Serviço com respeito e honestidade</div>
+          <div class="value-item"><span class="check">✓</span>Produtos de qualidade</div>
+          <div class="value-item"><span class="check">✓</span>Compromisso com prazos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: BRANDS -->
+<div id="page-brands" style="display:none;">
+  <div class="page-header"><div class="container"><h1>Marcas Que Representamos</h1><p>Parcerias internacionais com empresas de renome na Ásia, Europa e África</p></div></div>
+  <div class="page-section">
+    <div class="container">
+      <div class="brands-grid">
+        <div class="brand-card">
+          <div class="brand-logo"><div style="font-weight:800;color:#e63946;font-size:1.5rem;">H</div></div>
+          <div class="brand-info"><h3>HITACHI Construction</h3><p>Representante oficial em Moçambique para assistência técnica e comercialização de todos os equipamentos HITACHI.</p><span class="brand-tag official">Representante Oficial</span></div>
+        </div>
+        <div class="brand-card">
+          <div class="brand-logo"><div style="font-weight:800;color:#0057a3;font-size:1.3rem;">DB</div></div>
+          <div class="brand-info"><h3>Dunham-Bush</h3><p>Representante oficial para assistência técnica e comercialização de equipamentos de ar condicionado e acessórios.</p><span class="brand-tag official">Representante Oficial</span></div>
+        </div>
+        <div class="brand-card">
+          <div class="brand-logo"><div style="font-weight:800;color:#003d7a;font-size:1.5rem;">W</div></div>
+          <div class="brand-info"><h3>WILO</h3><p>Parceria comercial para fornecimento de bombas de água e válvulas industriais.</p><span class="brand-tag partner">Parceiro Comercial</span></div>
+        </div>
+        <div class="brand-card">
+          <div class="brand-logo"><div style="font-weight:800;color:#009ee3;font-size:1.5rem;">K</div></div>
+          <div class="brand-info"><h3>KSB</h3><p>Parceria comercial para fornecimento de bombas e válvulas de água.</p><span class="brand-tag partner">Parceiro Comercial</span></div>
+        </div>
+        <div class="brand-card">
+          <div class="brand-logo"><div style="font-weight:800;color:#00a651;font-size:1.2rem;">−40</div></div>
+          <div class="brand-info"><h3>MINUS40</h3><p>Parceria para fornecimento de equipamentos hospitalares de refrigeração e máquinas de gelo.</p><span class="brand-tag partner">Parceiro Comercial</span></div>
+        </div>
+        <div class="brand-card">
+          <div class="brand-logo"><div style="font-weight:800;color:#003a70;font-size:1.5rem;">S</div></div>
+          <div class="brand-info"><h3>STULZ</h3><p>Parceria para data center cooling, micro data center, Cyberhadle e sistemas de ar condicionado.</p><span class="brand-tag partner">Parceiro Comercial</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: PORTFOLIO -->
+<div id="page-portfolio" style="display:none;">
+  <div class="page-header"><div class="container"><h1>Portfolio</h1><p>Alguns dos nossos clientes mais frequentes</p></div></div>
+  <div class="page-section">
+    <div class="container">
+      <div class="section-header"><span class="tag">Clientes</span><h2>Instituições Que Confiam em Nós</h2></div>
+      <div class="clients-grid" style="grid-template-columns:repeat(4,1fr);">
+        <div class="client-item" style="flex-direction:column;gap:8px;padding:32px;"><div style="font-size:2rem;">💧</div><div style="font-weight:700;">ARA-SUL</div><div style="font-size:0.75rem;color:var(--gray-400);">Águas</div></div>
+        <div class="client-item" style="flex-direction:column;gap:8px;padding:32px;"><div style="font-size:2rem;">⚡</div><div style="font-weight:700;">Cahora Bassa</div><div style="font-size:0.75rem;color:var(--gray-400);">Energia</div></div>
+        <div class="client-item" style="flex-direction:column;gap:8px;padding:32px;"><div style="font-size:2rem;">💡</div><div style="font-weight:700;">EDM</div><div style="font-size:0.75rem;color:var(--gray-400);">Electricidade</div></div>
+        <div class="client-item" style="flex-direction:column;gap:8px;padding:32px;"><div style="font-size:2rem;">🏗️</div><div style="font-weight:700;">Elevo</div><div style="font-size:0.75rem;color:var(--gray-400);">Construção</div></div>
+        <div class="client-item" style="flex-direction:column;gap:8px;padding:32px;"><div style="font-size:2rem;">🏛️</div><div style="font-weight:700;">MTESS</div><div style="font-size:0.75rem;color:var(--gray-400);">Governo</div></div>
+        <div class="client-item" style="flex-direction:column;gap:8px;padding:32px;"><div style="font-size:2rem;">🏭</div><div style="font-weight:700;">Opway</div><div style="font-size:0.75rem;color:var(--gray-400);">Construção</div></div>
+        <div class="client-item" style="flex-direction:column;gap:8px;padding:32px;"><div style="font-size:2rem;">⛽</div><div style="font-weight:700;">Petromoc / Sasol</div><div style="font-size:0.75rem;color:var(--gray-400);">Energia</div></div>
+        <div class="client-item" style="flex-direction:column;gap:8px;padding:32px;"><div style="font-size:2rem;">🌾</div><div style="font-weight:700;">Sizabantu</div><div style="font-size:0.75rem;color:var(--gray-400);">Agricultura</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: CONTACT -->
+<div id="page-contact" style="display:none;">
+  <div class="page-header"><div class="container"><h1>Contactos</h1><p>Estamos aqui para ajudar</p></div></div>
+  <div class="page-section">
+    <div class="container">
+      <div class="contact-page-grid">
+        <div class="contact-page-info">
+          <div class="info-card"><h4>📍 Morada</h4><p>Av. Ahmed Sekou Touré, 1919<br>1º Andar Esquerdo<br>Maputo, Moçambique</p></div>
+          <div class="info-card"><h4>📞 Telefone</h4><p>+258 21 312 389<br>Móvel: +258 873 132 800<br>Fax: +258 21 312 390</p></div>
+          <div class="info-card"><h4>📧 Email</h4><p>info@tsenane.co.mz</p></div>
+          <div class="info-card"><h4>🌍 Presença Internacional</h4><p>Maputo, Moçambique<br>Nelspruit, África do Sul</p></div>
+          <div class="map-container" style="margin-top:16px;background:var(--gray-200);border-radius:var(--radius);height:240px;display:flex;align-items:center;justify-content:center;">
+            <div style="text-align:center;color:var(--gray-400);">🗺️<br>Mapa Interactivo<br><span style="font-size:0.813rem;">Av. Ahmed Sekou Touré, 1919, Maputo</span></div>
+          </div>
+        </div>
+        <form class="contact-form" style="background:var(--gray-50);border-color:var(--gray-200);" onsubmit="event.preventDefault();alert('Obrigado pelo seu contacto. Responderemos em breve.');">
+          <h3 style="margin-bottom:20px;color:var(--gray-900);">Envie-nos uma Mensagem</h3>
+          <div class="form-group"><input type="text" placeholder="Nome completo" style="background:var(--white);border-color:var(--gray-200);color:var(--gray-900);" required></div>
+          <div class="form-group"><input type="email" placeholder="Email" style="background:var(--white);border-color:var(--gray-200);color:var(--gray-900);" required></div>
+          <div class="form-group"><input type="tel" placeholder="Telefone" style="background:var(--white);border-color:var(--gray-200);color:var(--gray-900);"></div>
+          <div class="form-group">
+            <select style="background:var(--white);border-color:var(--gray-200);color:var(--gray-900);"><option>Sector de Interesse</option><option>Energia</option><option>Água e Saneamento</option><option>Construção Civil</option><option>Agricultura</option><option>Saúde e Medicina</option><option>Transporte</option></select>
+          </div>
+          <div class="form-group"><textarea placeholder="Descreva a sua necessidade" style="background:var(--white);border-color:var(--gray-200);color:var(--gray-900);" required></textarea></div>
+          <div class="form-group"><button type="submit" class="btn btn-primary">Enviar Mensagem</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: SECTOR DETAIL -->
+<div id="page-sector" style="display:none;">
+  <div class="page-header" id="sectorHeader"><div class="container"><h1 id="sectorTitle">Sector</h1><p id="sectorSubtitle">Equipamentos e soluções</p></div></div>
+  <div class="sector-detail">
+    <div class="container">
+      <div class="sector-detail-grid">
+        <div class="sector-detail-text" id="sectorText">
+          <h2>Visão Geral</h2>
+          <p>Conteúdo detalhado do sector...</p>
+        </div>
+        <div class="sector-detail-list" id="sectorList">
+          <div class="sector-detail-item"><h4>Produtos</h4><p>Lista de equipamentos disponíveis...</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const sectors = {
+  energy: { title: 'Energia', subtitle: 'Soluções completas em geração e gestão de energia', color: 'ps-energy',
+    text: '<h2>Energia — Soluções Completas</h2><p>Fornecemos geradores eléctricos, painéis solares, contadores de energia, contadores de combustível, bombas de reabastecimento e acessórios. Soluções para homes, empresas e indústria.</p><ul><li>Geradores a diesel e gasolina</li><li>Painéis solares fotovoltaicos</li><li>Contadores de energia monofásicos e trifásicos</li><li>Bombas de reabastecimento de combustível</li><li>UPS e sistemas de backup</li><li>Groupos electrogénos industriais</li></ul>',
+    list: [{h:'Produtos Principais',p:'Geradores, painéis solares, UPS, contadores de energia e bombas de combustível.'},{h:'Marcas Parceiras',p:'Hitachi (geradores), marcas asiáticas e europeias seleccionadas.'},{h:'Serviços',p:'Instalação, manutenção preventiva e correctiva, consultoria energética.'},{h:'Clientes',p:'EDM, Petromoc, Sasol, indústria extractiva e comércio.'}]
+  },
+  water: { title: 'Água e Saneamento', subtitle: 'Gestão eficiente de recursos hídricos', color: 'ps-water',
+    text: '<h2>Água e Saneamento</h2><p>Fornecemos contadores de água, tubos e acessórios, bombas e válvulas. Serviços de perfuração, inspecção, monitoria e telemetria, e tratamento de água.</p><ul><li>Contadores de água residenciais e industriais</li><li>Tubagens e fittings em PVC, ferro e aço</li><li>Bombas centrifugas, submersíveis e de superfície</li><li>Válvulas de comporta, esfera e retenção</li><li>Sistemas de telemetria e monitoria remota</li><li>Tratamento de água (ETAR, osmose inversa)</li></ul>',
+    list: [{h:'Produtos Principais',p:'Bombas WILO/KSB, válvulas, contadores, tubagens.'},{h:'Serviços',p:'Perfuração de furos, telemetria, tratamento de água, inspecção.'},{h:'Marcas',p:'WILO, KSB, marcas de referência em hidráulica.'},{h:'Clientes',p:'ARA-SUL, Cahora Bassa, autarquias e indústria.'}]
+  },
+  construction: { title: 'Construção Civil', subtitle: 'Maquinaria e consultoria para construção', color: 'ps-construction',
+    text: '<h2>Construção Civil</h2><p>Fornecemos maquinaria de construção e acessórios. Serviços de consultoria para projectos de engenharia civil.</p><ul><li>Escavadoras hidráulicas Hitachi</li><li>Pás carregadoras e retroescavadoras</li><li>Compactadores e cilindros</li><li>Betoneiras e equipamentos de betão</li><li>Andaimes e cofragens</li><li>Consultoria em projectos de engenharia civil</li></ul>',
+    list: [{h:'Maquinaria Hitachi',p:'Representante oficial Hitachi para toda a linha de construção.'},{h:'Equipamentos',p:'Escavadoras, pás carregadoras, bulldozers, cilindros.'},{h:'Consultoria',p:'Apoio técnico em projectos de engenharia civil.'},{h:'Serviços',p:'Assistência técnica, peças, formação de operadores.'}]
+  },
+  agriculture: { title: 'Agricultura', subtitle: 'Equipamento agrícola moderno', color: 'ps-agriculture',
+    text: '<h2>Agricultura</h2><p>Fornecemos tractores, arados, equipamentos agrícolas, reboques, entre outros. Soluções para agricultura de subsistência e comercial.</p><ul><li>Tractores agrícolas de 40 a 200 CV</li><li>Arados de disco, grades e semeadoras</li><li>Reboques agrícolas basculantes</li><li>Sistemas de rega (aspersão, gota-a-gota)</li><li>Motobombas para irrigação</li><li>Acessórios e peças de reposição</li></ul>',
+    list: [{h:'Tractores',p:'Diversas potências e marcas para agricultura familiar e comercial.'},{h:'Implementos',p:'Arados, grades, semeadoras, adubadeiras.'},{h:'Rega',p:'Sistemas completos de irrigação com bombas WILO.'},{h:'Apoio Técnico',p:'Formação e assistência no terreno.'}]
+  },
+  health: { title: 'Saúde e Medicina', subtitle: 'Equipamento hospitalar de precisão', color: 'ps-health',
+    text: '<h2>Saúde e Medicina</h2><p>Fornecemos refrigeradores para conservação de vacinas e sangue, arcas frias para morgues e equipamento hospitalar. Parceiros MINUS40.</p><ul><li>Refrigeradores de vacinas (norma OMS)</li><li>Arcas frias para morgues</li><li>Equipamento hospitalar diverso</li><li>Máquinas de gelo</li><li>Sistemas de climatização hospitalar</li><li>Manutenção e assistência técnica</li></ul>',
+    list: [{h:'Refrigeração',p:'Refrigeradores de vacinas e sangue (MINUS40).'},{h:'Morgues',p:'Arcas frias para câmaras mortuárias.'},{h:'Climatização',p:'Sistemas Dunham-Bush para hospitais.'},{h:'Serviço',p:'Assistência técnica especializada, peças e manutenção.'}]
+  },
+  transport: { title: 'Transporte', subtitle: 'Aluguer de equipamentos pesados', color: 'ps-transport',
+    text: '<h2>Transporte</h2><p>Oferecemos serviços de aluguer de dump trucks, camiões basculantes e equipamentos de transporte em geral.</p><ul><li>Dump trucks para mineração e construção</li><li>Camiões basculantes</li><li>Equipamentos de movimentação de terras</li><li>Aluguer por hora, dia ou projecto</li><li>Operadores qualificados</li><li>Manutenção incluída no aluguer</li></ul>',
+    list: [{h:'Frota',p:'Dump trucks, camiões basculantes, equipamentos de terraplanagem.'},{h:'Aluguer',p:'Por hora, dia, semana ou projecto.'},{h:'Operadores',p:'Maquinistas qualificados e experientes.'},{h:'Manutenção',p:'Assistência Hitachi incluída no contrato.'}]
+  }
+};
+
+function showPage(page) {
+  document.querySelectorAll('[id^="page-"]').forEach(p => p.style.display = 'none');
+  const el = document.getElementById('page-' + page);
+  if (el) el.style.display = 'block';
+  document.getElementById('navLinks').classList.remove('open');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+  if (page === 'home') document.querySelectorAll('[id^="page-"]').forEach(p => p.style.display = 'none') || (document.getElementById('page-home').style.display = 'block');
+}
+
+function showSector(sector) {
+  if (!sectors[sector]) return;
+  const s = sectors[sector];
+  document.querySelectorAll('[id^="page-"]').forEach(p => p.style.display = 'none');
+  document.getElementById('page-sector').style.display = 'block';
+  document.getElementById('sectorHeader').className = 'page-header ' + s.color;
+  document.getElementById('sectorTitle').textContent = s.title;
+  document.getElementById('sectorSubtitle').textContent = s.subtitle;
+  document.getElementById('sectorText').innerHTML = s.text;
+  document.getElementById('sectorList').innerHTML = s.list.map(l => '<div class="sector-detail-item"><h4>' + l.h + '</h4><p>' + l.p + '</p></div>').join('');
+  document.getElementById('navLinks').classList.remove('open');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+// Init: show home
+document.getElementById('page-home').style.display = 'block';
+</script>
+</body>
+</html>
